@@ -21,6 +21,7 @@ public class MadLibs {
          // if chose createFile
          if(mode.equalsIgnoreCase("c")) {
             create(console);
+            System.out.print("Your mad-lib has been created!");
             System.out.print("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ");
             mode = console.nextLine();   
          }
@@ -37,6 +38,10 @@ public class MadLibs {
             }
             // open to read the file
             viewFile(fileName);
+            System.out.print("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ");
+            mode = console.nextLine();
+         }
+         else {
             System.out.print("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ");
             mode = console.nextLine();
          }
