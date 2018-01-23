@@ -12,7 +12,8 @@ public class MadLibs {
       System.out.println("Welcome to the game of Mad Libs.");
       System.out.println("I will ask you to provide various words");
       System.out.println("and phrases to fill in a story.");
-      System.out.println("The result will be written to an output file.");      
+      System.out.println("The result will be written to an output file.");
+      System.out.println();      
       // choose what mode
       System.out.print("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ");
       String mode = console.nextLine();
@@ -21,8 +22,9 @@ public class MadLibs {
          // if chose createFile
          if(mode.equalsIgnoreCase("c")) {
             create(console);
-            System.out.print("Your mad-lib has been created!");
-            System.out.print("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ");
+            System.out.println("Your mad-lib has been created!");
+            System.out.println();
+            System.out.println("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ");
             mode = console.nextLine();   
          }
          // if chose view
@@ -42,7 +44,7 @@ public class MadLibs {
             mode = console.nextLine();
          }
          else {
-            System.out.print("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ");
+            System.out.println("(C)recate mad-lib, (V)iew mad-lib, (Q)uit? ");
             mode = console.nextLine();
          }
       }
