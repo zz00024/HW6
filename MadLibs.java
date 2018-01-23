@@ -28,11 +28,18 @@ public class MadLibs {
          else if(mode.equalsIgnoreCase("v")) {
             System.out.println("Input file name");
             String fileName = console.next();
+            File file = new File(fileName);
             // check if the file exist
+            while(!file.exists()) {
+               System.out.println("File not found. Try again:");
+               fileName = console.next();
+            }
+            /*
             while(!fileFound(fileName)) {
                System.out.println("File not found. Try again:");
                fileName = console.next();   
             }
+            */
             viewFile(fileName);
             System.out.println("(C)reate mad-lib, (V)iew mad-lib, (Q)uit?");
             mode = console.next();
@@ -52,7 +59,7 @@ public class MadLibs {
          fileName = console.next();
       }        
       
-      // crate output file 
+      // create a output file 
       System.out.println("Output file name: ");
       String outPut = console.next();
       try {
@@ -63,19 +70,7 @@ public class MadLibs {
          e.printStackTrace();
       }
    }
-   
-   private static void writeFile(String inputFile, String outputFile){
-      try {
-         //OPEN FILE
-         FileWriter fw = new FileWriter(outputFile);
-         PrintWriter pw = new PrintWriter(fw);
-         pw.close();
-      }
-      catch(IOException e) {
-         out.println("ERROR!");
-      }
-   }
-  
+     
    // method for viewing file
    private static void viewFile(String fileName) throws IOException {
             FileReader in = new FileReader(fileName);
