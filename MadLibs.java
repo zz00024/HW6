@@ -44,11 +44,14 @@ public class MadLibs {
          else {
             mode = redundant(console, mode);
          }
+         // Rita: why not just put mode=redundant(console, mode) outside the if else statements since you have this
+         // line at the end of each clause?
       }
-      // close scanner?
+      // close scanner? Yep
       console.close();
    }
    
+   // Rita: 大哥懶得想名字也不是這樣呀
    private static String redundant(Scanner console, String mode) {
             System.out.println("(C)recate mad-lib, (V)iew mad-lib, (Q)uit? ");
             mode = console.nextLine();
@@ -95,6 +98,7 @@ public class MadLibs {
       String finalLine = "";
       while(tokens.hasNext()) {
          String word = tokens.next();
+         // Rita: remove unused variable
          int wordLength = word.length();
          // check if the token is placeholder and replace it with what user want
          // convert char to string so we can use it in expression
@@ -109,7 +113,10 @@ public class MadLibs {
             // replace an or a 
             // Hint: array and for loop
             String changeWord = String.valueOf(printWord.charAt(0));
+            // Rita: please give better naming
+            // Rita: you can probably move this into a private method (up to you)
             String[] a = new String[5]; 
+            // Rita: You can do something like String[] a = new String[]{"a","e","i","o","u"}
             a[0] = "a";
             a[1] = "e";
             a[2] = "i";
